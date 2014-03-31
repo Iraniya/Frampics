@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Untitled 1</title>
+<style type="text/css">
+figure, figcaption {
+display: block;
+}
+
+#borders {
+   position: relative;
+   z-index: 1;
+   padding: 30px;
+   border:url('images/backImg.png')  0px 25px;
+   background-image:url('images/back2.png');
+   background-repeat:repeat;
+}
+
+#borders2 {
+   position: relative;
+   z-index: -1;
+   padding: 40px;
+   border:url('images/backImg.png')  0px 25px;
+   background-image:url('images/backImg.png');
+   background-repeat:repeat;
+}
+
+
+
+#borders :before{
+	   border-style: solid;
+border-width:10px;
+-moz-border-image: url(images/backImg.png) 15 15  repeat;
+-webkit-border-image: url(images/backImg.png) 15 15  repeat;
+-o-border-image: url(images/backImg.png) 15 15 repeat;
+border-image: url(images/backImg.png) 15 15 fill repeat;
+
+}
+#polaroid{
+width:100%;
+overflow:hidden;
+padding:20px 10px;
+}
+#polaroid figure{
+  background: #f4f4f4;
+border:30px solid transparent;
+            width: 200px;
+            height: 200px;
+            margin: 60px auto;
+            position: relative;}
+            
+#polaroid figure:before {
+/*border: 1px solid white;*/
+            content: '';
+            border:30px solid transparent;
+            border-image:url('images/backImg.png');
+			border-image-repeat: repeat;
+            position: absolute;}
+            
+#polaroid figure:after {
+            content: '';
+            position: absolute;
+            width: 296px;
+            height: 296px;
+/*            border: 1px solid #bbbbbb;
+*/            left: 1px; top: 1px;
+                        border-image:url('images/backImg.png');
+                        border-image-repeat: stretch;
+
+        }            
+#polaroid figure:nth-child(even):before {
+left:150px;
+top: -15px;
+width: 55px;
+height: 25px;
+-webkit-transform: rotate(12deg);
+-moz-transform: rotate(12deg);
+-o-transform: rotate(12deg);
+-ms-transform: rotate(12deg);
+}
+#polaroid figcaption{
+text-align:center;
+font-family: 'Reenie Beanie', cursive; /*Reenie Beanie is available through Google Webfonts http://code.google.com/webfonts/specimen/Reenie+Beanie*/
+font-size:1.3em;
+color:#454f40;
+letter-spacing:0.09em;
+}
+/**IE Hacks - see http://css3pie.com/ for more info on how to use CS3Pie and to download the latest version**/
+#polaroid figure{
+-pie-background: linear-gradient(#ede1c9, #fef8e2 20%, #f2ebde 60%);
+behavior: url(assets/pie/PIE.htc);
+position:relative; /*required to make PIE work*/
+padding-top:10px\9;
+padding-right:10px\9;
+}
+</style>
+</head>
+
+<body>
+<div>
+<figure>
+<div id="borders2">
+<img  id="borders" class="borders2" src="images/abc.png.JPG" width="200" height="200" alt="Red mushroom" /></div>
+<figcaption>Pretty red mushroom</figcaption>
+</figure>
+<figure>
+<img src="assets/polaroid02.jpg" width="200" height="200" alt="Rainbow near Keswick" />
+<figcaption>Rainbow near Keswick</figcaption>
+</figure>
+<figure>
+<img src="assets/polaroid03.jpg" width="200" height="200" alt="An old tree" />
+<figcaption>Nice old tree</figcaption>
+</figure>
+</div><!--end polaroid-->
+</body>
+
+</html>
